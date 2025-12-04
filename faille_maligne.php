@@ -1,6 +1,6 @@
 <?php
 // faille_maligne.php
-// DÉFI : "La Porte Ouverte"
+// DÉFI : "La faille la plus maligne"
 // TYPE : Command Injection (RCE) leading to Reverse Shell
 
 $output = "";
