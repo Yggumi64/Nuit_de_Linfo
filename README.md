@@ -17,4 +17,4 @@ Une application web autour des logiciels libre de droit.
 - Hidden Snake :
 - Rube Goldberg : Raphael
 - Incrustation 3D : Théo
-- Faille maligne :
+- Faille maligne : Guillaume (R&T)
