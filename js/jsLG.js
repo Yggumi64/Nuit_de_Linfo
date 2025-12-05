@@ -39,9 +39,21 @@ const feedbackEl = document.getElementById('feedback');
 const reponseSection = document.getElementById('reponse-section');
 const questionSection = document.querySelector('.question');
 const resetButton = document.getElementById('reset-button');
+const scoreHeaderSpan = document.getElementById("score");
+const nextButton = document.getElementById("UwU");
+const params = new URLSearchParams(window.location.search);
+let globalScore = Number(params.get("score")) || 0;
 
 
 // --- Fonctions du jeu ---
+
+/**
+ * Affichage du score
+ */
+
+if (scoreHeaderSpan) {
+    scoreHeaderSpan.textContent = globalScore;
+}
 
 /**
  * Charge et affiche la question actuelle.
@@ -96,6 +108,10 @@ function handleAnswerSubmit(event) {
         // Mettre à jour les stats
         moneySaved += currentQuestion.saveAmount;
         successCount++;
+        globalScore += 2
+        if (scoreHeaderSpan){
+            scoreHeaderSpan.textContent = globalScore;
+        }
         updateScoreDisplay();
 
         // Réparer le PC (changer l'image)
@@ -158,6 +174,16 @@ function resetGame() {
     loadQuestion();
 }
 
+/**
+ * Sortir du jeu 
+ */
+
+if (nextButton) {
+    nextButton.addEventListener("click", () => {
+        // Redirection en gardant le score global
+        window.location.href = `index.html?score=${globalScore}`;
+    });
+}
 
 // --- Événements ---
 answerForm.addEventListener('submit', handleAnswerSubmit);

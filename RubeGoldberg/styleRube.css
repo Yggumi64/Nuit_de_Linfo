@@ -1,0 +1,122 @@
+/* Reset de base pour enlever les marges par défaut */
+body {
+    background-color: #1e272e; /* La couleur est maintenant sur la page web, pas le canvas */
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Le canvas passe DEVANT le texte */
+    pointer-events: auto; /* On peut cliquer dessus */
+}
+/* Tes textes doivent avoir un z-index plus petit, ex: 1 */
+
+
+/* Le bouton de démarrage */
+#start-btn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    padding: 20px 40px;
+    font-size: 2rem;
+    background: #ff4757;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    z-index: 100; /* Toujours au-dessus de tout */
+    box-shadow: 0 10px 25px rgba(255, 71, 87, 0.5);
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#start-btn:hover {
+    transform: translate(-50%, -55%) scale(1.05); /* Petit effet de survol */
+}
+
+/* Les marqueurs de profondeur (texte décoratif) */
+.marker {
+    position: absolute;
+    left: 20px;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-left: 3px solid #ccc;
+    padding-left: 10px;
+    opacity: 0.6;
+    pointer-events: none; /* Pour que la balle ne "cogne" pas le texte HTML */
+}
+
+/* L'élément est caché au départ mais occupe quand même de la place (ou pas, selon ton choix) */
+.element-cache {
+    opacity: 0;
+    transform: translateY(50px); /* Il est un peu plus bas */
+    transition: all 0.8s ease-out; /* L'animation d'apparition */
+}
+
+/* Quand on ajoute cette classe, l'élément apparaît */
+.element-visible {
+    opacity: 1;
+    transform: translateY(0); /* Il remonte à sa place */
+}
+
+/* Positionnement : On peut utiliser position absolute pour placer le texte DANS le décor */
+#mon-titre {
+    position: absolute;
+    top: 300px;
+    left: 10%;
+    font-size: 3rem;
+    color: white;
+    z-index: -1; /* Derrière la machine */
+}
+
+/* Copie ça à la fin de ton fichier CSS */
+
+#start-btn.decollage {
+    /* On force le mouvement vers le haut (-150vh = sortir de l'écran) */
+    /* On garde le -50% pour qu'il reste au milieu en largeur */
+    transform: translate(-50%, -150vh) !important; 
+    
+    /* On force l'animation à durer 1.5 secondes */
+    transition: transform 1.5s ease-in, opacity 1.5s ease-in !important;
+    
+    /* On le rend transparent à la fin */
+    opacity: 0;
+    
+    /* On empêche de recliquer dessus */
+    pointer-events: none;
+}
+
+/* Le style de la boîte Pop-up */
+.popup-style {
+    position: fixed; /* IMPORTANT : Reste collé à l'écran même si ça scroll */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Une grosse ombre pour le relief */
+    text-align: center;
+    border: 4px solid #ff4757; /* Une bordure colorée */
+    
+    z-index: 1000; /* Passe DEVANT tout le reste (balle, murs...) */
+    width: 300px;
+    font-family: monospace;
+}
+
+/* L'animation d'apparition (Surcharge celle de base pour faire un effet POP) */
+.element-visible.popup-style {
+    transform: translate(-50%, -50%) scale(1); /* Taille normale */
+    opacity: 1;
+}
+
+/* L'état caché (Surcharge pour qu'elle parte de tout petit) */
+.element-cache.popup-style {
+    transform: translate(-50%, -50%) scale(0); /* Taille minuscule */
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.17, 0.67, 0.83, 1.67); /* Effet "Rebond" élastique */
+}
