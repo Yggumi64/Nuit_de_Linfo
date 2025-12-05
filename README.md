@@ -14,7 +14,7 @@ Une application web autour des logiciels libre de droit.
 # Organisation des teams
 - histoire principale : Nino, Axel
 - Chat bot débile : Guillaume (Info)
-- Hidden Snake :
+- Hidden Snake : Lucas
 - Rube Goldberg : Raphael
 - Incrustation 3D : Théo
 - Faille maligne : Guillaume (R&T)
