@@ -1,0 +1,98 @@
+/* Style de base et fond */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9; 
+    color: #333;
+}
+
+/* En-tête */
+header {
+    background-color: #007bff; /* Bleu vif pour l'en-tête */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur principal */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+/* Style générique pour les zones de contenu (card) */
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- NOUVEAU STYLE POUR LES CHAMPS DE FORMULAIRE --- */
+
+/* Style des labels */
+label {
+    display: block; /* Force le label à prendre toute la largeur */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Style des zones de texte */
+textarea {
+    width: 100%; /* Prend toute la largeur de son conteneur */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permet seulement le redimensionnement vertical */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+    font-family: inherit;
+}
+
+/* Style du bouton de soumission */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- FIN DU NOUVEAU STYLE --- */
+
+
+/* Style spécifique pour la QUESTION */
+.question {
+    border-left: 5px solid #ffc107; /* Bordure jaune/orange */
+}
+
+/* Style spécifique pour la RÉPONSE */
+.reponse {
+    border-left: 5px solid #28a745; /* Bordure verte */
+}
+
+
+/* Pied de page */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #6c757d; 
+    color: white;
+    font-size: 0.9em;
+    border-radius: 0;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi Reconditionnement PC</title>
+    <link rel="stylesheet" href="css/styleLG.css">
+</head>
+<body>
+
+    <header>
+        <h1>Défi Reconditionnement : Sauvez votre PC !</h1>
+    </header>
+    
+    <main>
+        
+        <section class="content card">
+            <h2>État Actuel du PC</h2>
+            <div id="pc-image-container">
+                <img id="pc-status-image" src="img/bad.jpg" alt="Ordinateur cassé" width="300">
+            </div>
+            
+            <div id="status-board">
+                <p>Économies Actuelles : <span id="money-saved">0</span> €</p>
+                <p>Questions Réussies : <span id="success-count">0</span> / 3</p>
+            </div>
+
+            <div id="challenge-message" class="info-message">
+                <p>Répondez correctement aux questions pour réparer le PC et économiser de l'argent !</p>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="question card">
+            <h3>🛠️ La Question de Réparation</h3>
+            <p id="current-question"></p> 
+            
+            
+            <form id="answer-form">
+                <label for="user-answer">Votre suggestion de réparation (mot-clé) :</label>
+                <input type="text" id="user-answer" required placeholder="Exemple : changer le disque dur">
+                <button type="submit" id="submit-button">Soumettre</button>
+            </form>
+
+            <div id="feedback" class="feedback-message"></div>
+        </section>
+
+        <section class="reponse card hidden" id="reponse-section">
+            <h3>✅ Défi Réussi !</h3>
+            <p>Félicitations ! Vous avez réussi le défi et économisé une belle somme en reconditionnant votre PC.</p>
+            <button id="reset-button">Recommencer le Défi</button>
+        </section>
+    
+    </main>
+    
+    <footer>
+        <p>Valorisation du reconditionné et de l'économie circulaire</p>
+    </footer>
+
+    <script src="javascript/jsLG.js"></script>
+</body>
+</html>
+
