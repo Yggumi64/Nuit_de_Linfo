@@ -9,19 +9,19 @@ const questionsData = [
         question: "Le PC ne démarre plus et un écran bleu apparaît. Avant de le jeter, que devrais-je vérifier pour le reconditionner à moindre coût ?",
         correctKeywords: ["mémoire", "ram", "barrette", "memoire"],
         saveAmount: 80,
-        nextImage: "img/numbers.png"
+        nextImage: "img/img3.jpg"
     },
     {
         question: "L'ordinateur est très lent, surtout au démarrage. Quel composant de stockage peut être facilement remplacé et reconditionné pour améliorer significativement la vitesse ?",
         correctKeywords: ["ssd", "disque dur", "stockage", "disque"],
         saveAmount: 120,
-        nextImage: "img/screen.png"
+        nextImage: "img/img2.jpg"
     },
     {
         question: "Le système est à jour, mais certains programmes récents ne fonctionnent pas bien. Le PC a 8 ans. Quel composant essentiel pourrait être reconditionné (ou remplacé par un modèle reconditionné) pour un gain de performance général ?",
         correctKeywords: ["processeur", "cpu", "carte mère", "carte graphique", "gpu"],
         saveAmount: 250,
-        nextImage: "img/good.png"
+        nextImage: "img/img1.jpg"
     },
     // Ajoutez plus de questions si vous le souhaitez
 ];
@@ -121,7 +121,7 @@ function handleAnswerSubmit(event) {
 function checkWin() {
     if (successCount >= MAX_SUCCESSES) {
         // Le joueur a gagné
-        pcStatusImageEl.src = "pc_fini_placeholder.png";
+        pcStatusImageEl.src = "img/img1.jpg";
         pcStatusImageEl.alt = "Ordinateur complètement réparé !";
 
         questionSection.classList.add('hidden');
