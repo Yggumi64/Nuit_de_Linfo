@@ -412,3 +412,19 @@ function checkTrigger(body) {
 
     });
 });
+
+// --- GESTION DU BOUTON DE LA POP-UP ---
+const btnFermer = document.getElementById('btn-fermer');
+const popup = document.getElementById('ma-popup');
+
+btnFermer.addEventListener('click', function() {
+    console.log("Fermeture de la pop-up...");
+
+    // 1. On cache la pop-up (l'animation CSS inverse se lance)
+    popup.classList.remove('element-visible');
+    popup.classList.add('element-cache');
+
+    // 2. On rend la main (Déverrouillage du clavier)
+    clavierVerrouille = false; 
+    console.log("Clavier débloqué ! 🔓");
+});
