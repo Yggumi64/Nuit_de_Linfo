@@ -6,7 +6,7 @@ const MAX_SUCCESSES = 3;
 // Définition des questions et réponses possibles (avec mots-clés pour la vérification)
 const questionsData = [
     {
-        question: "Le PC ne démarre plus et un écran bleu apparaît. Avant de le jeter, que devrais-je vérifier pour le reconditionner à moindre coût ?",
+        question: "Mon PC est devenu très lent, et a du mal à charger les pages, que devrais-je vérifier ?",
         correctKeywords: ["mémoire", "ram", "barrette", "memoire"],
         saveAmount: 80,
         nextImage: "img/img3.jpg"
