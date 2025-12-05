@@ -98,8 +98,7 @@
             const fullPrompt = `${systemPrompt}\n\nContexte:\n${context}\n\nIA:`;
 
             try {
-                const encodedPrompt = encodeURIComponent(fullPrompt);
-                const url = `https://nightinfo.petitfilou.xyz/${encodedPrompt}?model=mistral`;
+                const url = `https://text.pollinations.ai/${encodeURIComponent(fullPrompt)}?model=mistral`;
                 const response = await fetch(url);
                 if (document.getElementById('loading')) chatBox.removeChild(document.getElementById('loading'));
                 let data = await response.text();
@@ -134,7 +133,7 @@
 
             // Prompt du juge technique
             // On demande à l'IA d'accepter n'importe quelle méthode viable (Nettoyage, SSD, Pâte thermique, Linux...)
-            const validatorPrompt = `
+            let validatorPrompt = `
                 Tu es un technicien expert en informatique.
                 QUESTION: "${QUESTION_QUIZ}"
                 RÉPONSE UTILISATEUR: "${answer}"
@@ -145,7 +144,7 @@
             `;
 
             try {
-                const urlValid = `https://nightinfo.petitfilou.xyz/${encodeURIComponent(validatorPrompt)}?model=mistral&seed=${Math.random()}`; //Passage de la requète par une IP Privée. URL d'origine: https://text.pollinations.ai/
+                const urlValid = `https://text.pollinations.ai/${validatorPrompt}?model=mistral`;
                 const response = await fetch(urlValid);
                 const text = await response.text();
 
