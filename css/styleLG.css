@@ -12,8 +12,17 @@ header {
     background-color: #3d8bff; /* Bleu vif */
     color: white;
     padding: 20px 0;
-    text-align: center;
+    display: flex;
+    /* text-align: center;*/
+    align-items: center;
+    justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
 }
 
 /* Conteneur principal */
@@ -21,6 +30,13 @@ main {
     max-width: 900px;
     margin: 30px auto;
     padding: 0 20px;
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;  /* espace entre les deux */
+    align-items: center;             /* alignement vertical */
+    margin-bottom: 20px;   
 }
 
 /* Style générique pour les zones de contenu (card) */
