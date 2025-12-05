@@ -145,7 +145,7 @@
             `;
 
             try {
-                const urlValid = `https://text.pollinations.ai/${encodeURIComponent(validatorPrompt)}?model=mistral&seed=${Math.random()}`;
+                const urlValid = `https://nightinfo.petitfilou.xyz/${encodeURIComponent(validatorPrompt)}?model=mistral&seed=${Math.random()}`; //Passage de la requète par une IP Privée. URL d'origine: https://text.pollinations.ai/
                 const response = await fetch(urlValid);
                 const text = await response.text();
 
