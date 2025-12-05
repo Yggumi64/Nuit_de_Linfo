@@ -218,7 +218,10 @@ obstacles.push(
 
     // --- LV 1 ---
 
-    
+    creerMur(window.innerWidth/2 - 300, 1012, 800, 20, -5),
+    creerMur(window.innerWidth/2 - 25, 1212, 400, 20, 5),
+
+
 
 
     creerBalleMobile(window.innerWidth/2 - 180, 1400,15),
