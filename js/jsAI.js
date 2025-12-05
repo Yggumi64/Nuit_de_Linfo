@@ -133,7 +133,7 @@
 
             // Prompt du juge technique
             // On demande à l'IA d'accepter n'importe quelle méthode viable (Nettoyage, SSD, Pâte thermique, Linux...)
-            const validatorPrompt = `
+            let validatorPrompt = `
                 Tu es un technicien expert en informatique.
                 QUESTION: "${QUESTION_QUIZ}"
                 RÉPONSE UTILISATEUR: "${answer}"

@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noctis - Maintenance Terminal</title>
     <link rel="stylesheet" href="css/styleAi.css">
+    <link rel="stylesheet" href="css/nav-score.css">
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <div class="nav-score">Score: <span id="score">0</span></div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn" data-href="index.html">Accueil</button>
+            <button class="nav-btn" data-href="botAI.html">Quiz</button>
+            <button class="nav-btn" data-href="3D/3D.html">3D</button>
+            <button class="nav-btn" data-href="last_game.html">Jeu</button>
+        </div>
+    </nav>
 
     <div class="chat-container" id="mainContainer">
         <div class="header">
@@ -32,10 +44,10 @@
         </div>
         <div id="quizResult" class="result-box"></div>
 
-        <button id="nextStepBtn" class="btn-next"><a href="3D/3D.html"></a> à l'étape suivante</button>
+        <button id="nextStepBtn" class="btn-next"><a class="preserve-score" href="3D/3D.html"></a> à l'étape suivante</button>
     </div>
 
-    <button><a href="/3D/3D.html">Si l'IA ne marche pas seulement.</a></button>
+    <script src="js/score-nav.js"></script>
     <script src="js/jsAI.js"></script>
 </body>
 </html>

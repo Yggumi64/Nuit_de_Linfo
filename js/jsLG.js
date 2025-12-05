@@ -6,7 +6,7 @@ const MAX_SUCCESSES = 3;
 // Définition des questions et réponses possibles (avec mots-clés pour la vérification)
 const questionsData = [
     {
-        question: "Mon PC est devenu très lent, et a du mal à charger les pages, que devrais-je vérifier ?",
+        question: "Le PC ne démarre plus et un écran bleu apparaît. Avant de le jeter, que devrais-je vérifier pour le reconditionner à moindre coût ?",
         correctKeywords: ["mémoire", "ram", "barrette", "memoire"],
         saveAmount: 80,
         nextImage: "img/img3.jpg"
@@ -53,6 +53,7 @@ let globalScore = Number(params.get("score")) || 0;
 
 if (scoreHeaderSpan) {
     scoreHeaderSpan.textContent = globalScore;
+    if (window.updateScoreNav) window.updateScoreNav(globalScore);
 }
 
 /**
@@ -111,6 +112,7 @@ function handleAnswerSubmit(event) {
         globalScore += 2
         if (scoreHeaderSpan){
             scoreHeaderSpan.textContent = globalScore;
+            if (window.updateScoreNav) window.updateScoreNav(globalScore);
         }
         updateScoreDisplay();
 
@@ -172,6 +174,7 @@ function resetGame() {
     reponseSection.classList.add('hidden');
     
     loadQuestion();
+    if (window.updateScoreNav) window.updateScoreNav(0);
 }
 
 /**
@@ -193,5 +196,6 @@ resetButton.addEventListener('click', resetGame);
 document.addEventListener('DOMContentLoaded', () => {
     loadQuestion();
     updateScoreDisplay();
+    if (window.updateScoreNav) window.updateScoreNav(globalScore);
 });
 

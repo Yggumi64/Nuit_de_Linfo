@@ -2,6 +2,28 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+// --- Score handling for this page ---
+const _params3d = new URLSearchParams(window.location.search);
+let pageScore = Number(_params3d.get('score')) || 0;
+const PAGE_SCORE_MAX = pageScore + 8;
+
+function setScore3D(newScore) {
+    pageScore = Math.min(Number(newScore) || 0, PAGE_SCORE_MAX);
+    const scoreEl = document.getElementById('score');
+    if (scoreEl) scoreEl.textContent = pageScore;
+    if (window.updateScoreNav) window.updateScoreNav(pageScore);
+    try {
+        const u = new URL(window.location.href);
+        u.searchParams.set('score', String(pageScore));
+        window.history.replaceState({}, '', u.toString());
+    } catch (e) {
+        // ignore
+    }
+}
+
+// initialize displayed score on page load
+setScore3D(pageScore);
+
 class Viewer3D {
     constructor(container, modelPath, errorId) {
         this.container = container;
@@ -122,8 +144,14 @@ class Viewer3D {
 
     startRotation() {
         if (this.isAnimating) return;
+        // increment page score by 1 on each (valid) click, capped at PAGE_SCORE_MAX
+        if (pageScore < PAGE_SCORE_MAX) {
+            setScore3D(pageScore + 1);
+        }
+        console.log('UwU');
         this.isAnimating = true;
         this.startTime = performance.now();
+        
     }
 
     animate() {

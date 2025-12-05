@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viewers 3D Interactifs</title>
     <link rel="stylesheet" href="style-3d.css">
+    <link rel="stylesheet" href="../css/nav-score.css">
 </head>
 <body>
     <header>
-        <h1>Les Logiciels Open-Source</h1>
-        <p>Découvrez des préjugés sur les logiciels Open-Source</p>
+        <h1>🖥️ Viewers 3D Interactifs</h1>
+        <p>Cliquez sur chaque modèle pour le faire tourner de 180°</p>
     </header>
+
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <div class="nav-score">Score: <span id="score">0</span></div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn" data-href="../index.html">Accueil</button>
+            <button class="nav-btn" data-href="../botAI.html">Quiz</button>
+            <button class="nav-btn" data-href="#">3D</button>
+            <button class="nav-btn" data-href="../last_game.html">Jeu</button>
+        </div>
+    </nav>
 
     <main>
         <section class="card">
@@ -55,11 +68,11 @@
             </div>
         </section>
 
-        <button><a href="../last_game.html">Suivant</a></button>
+        <button><a class="preserve-score" href="../last_game.html">Suivant</a></button>
     </main>
 
     <footer>
-        <p>Les préjugés sur les logiciels Open-Source</p>
+        <p>Visualisation 3D interactive avec Three.js</p>
     </footer>
 
     <script type="importmap">
@@ -70,6 +83,7 @@
             }
         }
     </script>
+    <script src="../js/score-nav.js"></script>
     <script type="module" src="viewers-3d.js"></script>
 </body>
 </html>

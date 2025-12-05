@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Défi Reconditionnement PC</title>
     <link rel="stylesheet" href="css/styleLG.css">
+    <link rel="stylesheet" href="css/nav-score.css">
 </head>
 <body>
 
@@ -12,13 +13,23 @@
         <button id="UwU">Panglos</button>
         <h1>Défi Reconditionnement : Sauvez votre PC !</h1>
     </header>
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <div class="nav-score">Score: <span id="score">0</span></div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn" data-href="index.html">Accueil</button>
+            <button class="nav-btn" data-href="botAI.html">Quiz</button>
+            <button class="nav-btn" data-href="3D/3D.html">3D</button>
+            <button class="nav-btn" data-href="last_game.html">Jeu</button>
+        </div>
+    </nav>
     
     <main>
         
         <section class="content card">
             <div id="info">
                 <h2>État Actuel du PC</h2>
-                <h2>Score: <span id="score"></span></h2>
             </div>
             <div id="pc-image-container">
                 <img id="pc-status-image" src="img/img4.jpg" alt="Ordinateur cassé" width="300">
@@ -53,7 +64,7 @@
         <section class="reponse card hidden" id="reponse-section">
             <h3>✅ Défi Réussi !</h3>
             <p>Félicitations ! Vous avez réussi le défi et économisé une belle somme en reconditionnant votre PC.</p>
-            <button id="reset-button"><a href="RubeGoldberg/rube.html">Défi suivant !</a></button>
+            <button id="reset-button">Recommencer le Défi</button>
         </section>
     
     </main>
@@ -62,6 +73,7 @@
         <p>Valorisation du reconditionné et de l'économie circulaire</p>
     </footer>
 
+    <script src="js/score-nav.js"></script>
     <script src="js/jsLG.js"></script>
 </body>
 </html>
