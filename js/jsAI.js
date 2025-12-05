@@ -74,7 +74,7 @@
             if (isPuzzleSolved) {
                 // --- MODE HACKER (Le puzzle est résolu, l'utilisateur reparle) ---
                 mainContainer.classList.add('glitch-mode');
-                document.getElementById('botTitle').textContent = "SYSTEM_OVERRIDE";
+                document.getElementById('botTitle').textContent = "SYSTEM_OVERLOAD";
                 document.getElementById('botTitle').classList.add('glitch-text');
 
                 systemPrompt =
@@ -99,7 +99,7 @@
 
             try {
                 const encodedPrompt = encodeURIComponent(fullPrompt);
-                const url = `https://text.pollinations.ai/${encodedPrompt}?model=mistral`;
+                const url = `https://nightinfo.petitfilou.xyz/${encodedPrompt}?model=mistral`;
                 const response = await fetch(url);
                 if (document.getElementById('loading')) chatBox.removeChild(document.getElementById('loading'));
                 let data = await response.text();
@@ -145,7 +145,7 @@
             `;
 
             try {
-                const urlValid = `https://text.pollinations.ai/${encodeURIComponent(validatorPrompt)}?model=mistral&seed=${Math.random()}`;
+                const urlValid = `https://nightinfo.petitfilou.xyz/${encodeURIComponent(validatorPrompt)}?model=mistral&seed=${Math.random()}`; //Passage de la requète par une IP Privée. URL d'origine: https://text.pollinations.ai/
                 const response = await fetch(urlValid);
                 const text = await response.text();
 
